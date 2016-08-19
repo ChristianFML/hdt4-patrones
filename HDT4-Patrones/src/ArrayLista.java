@@ -3,22 +3,21 @@
  * @author Christian Morales, Jose Luis Méndez
  * Carne: 15015, 15021
  * 17 de agosto del 2016
- * Descripción: abstract class para las distintas implementaciones, provee todos los metodos posibles a utilizar
+ * Descripción: implementacion de stack como ArrayList
  */
-
 import java.util.ArrayList;
 
-public abstract class AbstractStack <E> implements Stack<E>{
+public class ArrayLista<E> extends AbstractStack<E>{
     
     /**
      * variable data para atributo
      */
     protected ArrayList<E> data;
-    
+
     /**
      * construye un nuevo ArrayList generico vacio
      */
-    public AbstractStack()
+    public ArrayLista()
     {
     	data = new ArrayList<E>();
     }
@@ -30,7 +29,7 @@ public abstract class AbstractStack <E> implements Stack<E>{
     @Override
     public void push(E item)
     {
-	data.add(item);
+    	data.add(item);
     }
 
     /**
@@ -40,7 +39,7 @@ public abstract class AbstractStack <E> implements Stack<E>{
     @Override
     public E pop()
     {
-	return data.remove(size()-1);
+    	return data.remove(size()-1);
     }
 
     /**
@@ -49,10 +48,11 @@ public abstract class AbstractStack <E> implements Stack<E>{
      */
     @Override
     public E peek()
+
     {
-	return data.get(size() - 1);
+    	return data.get(size() - 1);
     }
-	
+
     /**
      *
      * @return la cantidad de elementos en el Stack
@@ -60,7 +60,7 @@ public abstract class AbstractStack <E> implements Stack<E>{
     @Override
     public int size()
     {
-    return data.size();
+    	return data.size();
     }
   
     /**
@@ -70,7 +70,6 @@ public abstract class AbstractStack <E> implements Stack<E>{
     @Override
     public boolean empty()
     {
-        return size() == 0;
+    	return size() == 0;
     }
-    
 }

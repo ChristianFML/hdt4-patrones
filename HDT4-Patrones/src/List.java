@@ -3,86 +3,131 @@
  * @author Christian Morales, Jose Luis Méndez
  * Carne: 15015, 15021
  * 17 de agosto del 2016
- * Descripción: 
+ * Descripción: interfaz para las implementaciones de la lista
+ * @param <E> generico
  */
 
 public interface List <E> {
     
-public int size();
-   // post: returns number of elements in list
+    /**
+     * @return la cantidad de elementos en la lista
+     */
+    public int size();
 
-   public boolean isEmpty();
-   // post: returns true iff list has no elements
+    /**
+     * @return verdadero si y solo si la lista no tiene elementos
+     */
+    public boolean isEmpty();
 
-   public void clear();
-   // post: empties list
+    /**
+     * limpia la lista
+     */
+    public void clear();
 
-   public void addFirst(E value);
-   // post: value is added to beginning of list
+    /**
+     * @param value se agrega al inicio de la lista
+     */
+    public void addFirst(E value);
 
-   public void addLast(E value);
-   // post: value is added to end of list
+    /**
+     * @param value se agrega al final de la lista
+     */
+    public void addLast(E value);
 
-   public E getFirst();
-   // pre: list is not empty
-   // post: returns first value in list
+    /**
+     * pre: la lista no debe estar vacia
+     * @return el primer valor de la lista
+     */
+    public E getFirst();
 
-   public E getLast();
-   // pre: list is not empty
-   // post: returns last value in list
+    /**
+     * pre: la lista no debe estar vacia
+     * @return el ultimo elemento de la lista
+     */
+    public E getLast();
 
-   public E removeFirst();
-   // pre: list is not empty
-   // post: removes first value from list
+    /**
+     * pre: la lista no debe etar vacia
+     * @return el primer elemento y lo borra
+     */
+    public E removeFirst();
 
-   public E removeLast();
-   // pre: list is not empty
-   // post: removes last value from list
+    /**
+     * pre: las lista no debe estar vacia
+     * @return el ultimo elemento de la lista y lo borra
+     */
+    public E removeLast();
 
-   public E remove(E value);
-   // post: removes and returns element equal to value
-   // otherwise returns null
+    /**
+     * @param value
+     * @return el valor igual al preguntado y lo remueve, si no hay reresa null
+     */
+    public E remove(E value);
 
-   public void add(E value);
-   // post: value is added to tail of list
+    /**
+     * @param value se agrega a la cola de la lista
+     */
+    public void add(E value);
 
-   public E remove();
-   // pre: list has at least one element
-   // post: removes last value found in list
+    /**
+     * pre: la lista no debe estar vacia
+     * @return el ultimo valor encontrado en la lista y lo quita
+     */
+    public E remove();
 
-   public E get();
-   // pre: list has at least one element
-   // post: returns last value found in list
+    /**
+     * pre: la lista no debe estar vacia
+     * @return el ultimo valor encontrado en la lista
+     */
+    public E get();
 
-   public boolean contains(E value);
-   // pre: value is not null
-   // post: returns true iff list contains an object equal to value
+    /**
+     * pre: el valor existe
+     * @param value valor a buscar
+     * @return verdadero si y solo si la lista contiene ese valor
+     */
+    public boolean contains(E value);
 
-   public int indexOf(E value);
-   // pre: value is not null
-   // post: returns (0-origin) index of value,
-   // or -1 if value is not found
+    /**
+     * pre: el valor existe
+     * @param value el valor a buscar
+     * @return la posicion del valor
+     */
+    public int indexOf(E value);
 
-   public int lastIndexOf(E value);
-   // pre: value is not null
-   // post: returns (0-origin) index of value,
-   // or -1 if value is not found
+    /**
+     * pre: el valor existe
+     * @param value
+     * @return la posicion del valor o -1 si no existe
+     */
+    public int lastIndexOf(E value);
 
-   public E get(int i);
-   // pre: 0 <= i < size()
-   // post: returns object found at that location
+    /**
+     * pre: la posicion esta dentro del rango de la lista
+     * @param i posicion
+     * @return el elemento correspondiente a esa posicion
+     */
+    public E get(int i);
 
-   public E set(int i, E o);
-   // pre: 0 <= i < size()
-   // post: sets ith entry of list to value o;
-   // returns old value
+    /**
+     * pre: la posicion esta dentro del rango de la lista
+     * @param i posicion
+     * @param o elemento
+     * set: el elemento en dicha posicion
+     * @return el ultimo valor antiguo de esa posicion
+     */
+    public E set(int i, E o);
 
-   public void add(int i, E o);
-   // pre: 0 <= i <= size()
-   // post: adds ith entry of list to value o
+    /**
+     * @param i posicion
+     * @param o elemento
+     * set: pone dicho elemento en la posicion dada
+     */
+    public void add(int i, E o);
 
-   public E remove(int i);
-   // pre: 0 <= i < size()
-   // post: removes and returns object found at that location 
-    
+    /**
+     * @param i posicion, debe estar dentro del rango de la lista
+     * @return el elemento de esa posicion y lo elimina
+     */
+    public E remove(int i); 
 }

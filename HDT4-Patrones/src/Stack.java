@@ -3,29 +3,41 @@
  * @author Christian Morales, Jose Luis Méndez
  * Carne: 15015, 15021
  * 17 de agosto del 2016
- * Descripción: 
+ * Descripción: interfaz par las implementaciones del stack
  */
 
 public interface Stack <E>{
     
-  public void push(E item);
-   // pre: 
-   // post: item is added to stack
-   // will be popped next if no intervening push
+    /**
+     * 
+     * @param item elemento a agregar
+     * post: el elemto es agregado al final del stack
+     */
+    public void push(E item);
    
-   public E pop();
-   // pre: stack is not empty
-   // post: most recently pushed item is removed and returned
+    /**
+     * el stack no debe estar vacio
+     * @return el ultimo elemento de la lista y lo borra
+     */
+    public E pop();
    
-   public E peek();
-   // pre: stack is not empty
-   // post: top value (next to be popped) is returned
+    /**
+     * el stack no debe estar vacio
+     * @return el ultimo elemento
+     */
+    public E peek();
    
-   public boolean empty();
-   // post: returns true if and only if the stack is empty
+    /**
+     *
+     * @return verdadero si y solo si el stacke esta vacio
+     */
+    public boolean empty();
    
-   public int size();
-   // post: returns the number of elements in the stack
+    /**
+     *
+     * @return la cantidad de elementos en el stack
+     */
+    public int size();
 
     
 }

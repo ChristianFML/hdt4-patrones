@@ -1,56 +1,76 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Universidad del Valle de Guatemala
+ * @author Christian Morales, Jose Luis Méndez
+ * Carne: 15015, 15021
+ * 17 de agosto del 2016
+ * Descripción: funciona como nodos, a manera de referencia de elementos para las implementaciones de lista
+ * @param <E> generico
  */
 
-/**
- *
- * @author Christian Morales
- */
 public class Node <E>{
     
-   protected E data; // value stored in this element
-   protected Node<E> nextElement; // ref to next
+    /**
+     * almacena el valor del elemento
+     */
+    protected E data;
 
-   public Node(E v, Node<E> next)
-   // pre: v is a value, next is a reference to 
-   //      remainder of list
-   // post: an element is constructed as the new 
-   //      head of list
-   {
+    /**
+     * referencia hacia el siguiente elemento
+     */
+    protected Node<E> nextElement;
+
+    /**
+     * pre: v existe, next si es referencia
+     * @param v elemento
+     * @param next referencia
+     * post: el elemento se vuelve la cabez
+     */
+    public Node(E v, Node<E> next)
+    {
        data = v;
        nextElement = next;
-   }
+    }
 
-   public Node(E v)
-   // post: constructs a new tail of a list with value v
-   {
-      this(v,null);
-   }
+    /**
+     * @param v elemento
+     * post: construye una nueva cola
+     */
+    public Node(E v)
+    {
+        this(v,null);
+    }
 
-   public Node<E> next()
-   // post: returns reference to next value in list
-   {
-      return nextElement;
-   }
+    /**
+     * @return una referencia al siguiente elemento
+     */
+    public Node<E> next()
+    {
+        return nextElement;
+    }
 
-   public void setNext(Node<E> next)
-   // post: sets reference to new next value
-   {
-      nextElement = next;
-   }
+    /**
+     * @param next referencia
+     * post: asigna esa referencia al siguiente elemento
+     */
+    public void setNext(Node<E> next)
+    {
+        nextElement = next;
+    }
 
-   public E value()
-   // post: returns value associated with this element
-   {
-      return data;
-   }
+    /**
+     * @return el valor asociado a ese elemento
+     */
+    public E value()
+    {
+         return data;
+    }
 
-   public void setValue(E value)
-   // post: sets value associated with this element
-   {
-      data = value;
-   }
-   
+    /**
+     * @param value elemento
+     * post: asigna ese valor 
+     */
+    public void setValue(E value)
+    {
+        data = value;
+    }
 }
