@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="HDT4-Patrones">
+  <ClassDiagramComponents>
+    <Class name="AbstractFactory" package="" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getStack" returnType="Stack&lt;E&gt;" visibility="public">
+          <Argument type="String" name="tipo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AbstractList" package="" visibility="public" isAbstract="true" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="isEmpty" returnType="boolean" visibility="public"/>
+        <Method name="contains" returnType="boolean" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AbstractStack" package="" visibility="public" isAbstract="true" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="data" type="ArrayList&lt;E&gt;" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="push" returnType="void" visibility="public">
+          <Argument type="E" name="item"/>
+        </Method>
+        <Method name="pop" returnType="E" visibility="public"/>
+        <Method name="peek" returnType="E" visibility="public"/>
+        <Method name="size" returnType="int" visibility="public"/>
+        <Method name="empty" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ArrayLista" package="" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="data" type="ArrayList&lt;E&gt;" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="push" returnType="void" visibility="public">
+          <Argument type="E" name="item"/>
+        </Method>
+        <Method name="pop" returnType="E" visibility="public"/>
+        <Method name="peek" returnType="E" visibility="public"/>
+        <Method name="size" returnType="int" visibility="public"/>
+        <Method name="empty" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Calculadora" package="" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="singleton" type="Calculadora" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="pila" type="Stack" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="Calculadora" visibility="public" isStatic="true"/>
+        <Method name="setPila" returnType="void" visibility="public">
+          <Argument type="Stack" name="factoryResult"/>
+        </Method>
+        <Method name="evaluar" returnType="int" visibility="public">
+          <Argument type="String" name="readItem"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DoblementeEncadenada" package="" visibility="public" isAbstract="true" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="count" type="int" visibility="protected"/>
+        <Field name="head" type="DoblementeEncadenadaNodo&lt;E&gt;" visibility="protected"/>
+        <Field name="tail" type="DoblementeEncadenadaNodo&lt;E&gt;" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addFirst" returnType="void" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+        <Method name="addLast" returnType="void" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+        <Method name="removeLast" returnType="E" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DoblementeEncadenadaNodo" package="" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="data" type="E" visibility="protected"/>
+        <Field name="nextElement" type="DoblementeEncadenadaNodo&lt;E&gt;" visibility="protected"/>
+        <Field name="previousElement" type="DoblementeEncadenadaNodo&lt;E&gt;" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="E" name="v"/>
+          <Argument type="DoblementeEncadenadaNodo&lt;E&gt;" name="next"/>
+          <Argument type="DoblementeEncadenadaNodo&lt;E&gt;" name="previous"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="E" name="v"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Interface name="List" package="" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Methods>
+        <Method name="size" returnType="int" visibility="public"/>
+        <Method name="isEmpty" returnType="boolean" visibility="public"/>
+        <Method name="clear" returnType="void" visibility="public"/>
+        <Method name="addFirst" returnType="void" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+        <Method name="addLast" returnType="void" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+        <Method name="getFirst" returnType="E" visibility="public"/>
+        <Method name="getLast" returnType="E" visibility="public"/>
+        <Method name="removeFirst" returnType="E" visibility="public"/>
+        <Method name="removeLast" returnType="E" visibility="public"/>
+        <Method name="remove" returnType="E" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+        <Method name="remove" returnType="E" visibility="public"/>
+        <Method name="get" returnType="E" visibility="public"/>
+        <Method name="contains" returnType="boolean" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+        <Method name="indexOf" returnType="int" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+        <Method name="lastIndexOf" returnType="int" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+        <Method name="get" returnType="E" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="set" returnType="E" visibility="public">
+          <Argument type="int" name="i"/>
+          <Argument type="E" name="o"/>
+        </Method>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="int" name="i"/>
+          <Argument type="E" name="o"/>
+        </Method>
+        <Method name="remove" returnType="E" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="Lista" package="" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="ListaCircular" package="" visibility="public" isAbstract="true" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="tail" type="Node&lt;E&gt;" visibility="protected"/>
+        <Field name="count" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addFirst" returnType="void" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+        <Method name="addLast" returnType="void" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+        <Method name="removeLast" returnType="E" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="main" package="" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="muestraContenido" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="archivo"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Node" package="" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields>
+        <Field name="data" type="E" visibility="protected"/>
+        <Field name="nextElement" type="Node&lt;E&gt;" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="E" name="v"/>
+          <Argument type="Node&lt;E&gt;" name="next"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="E" name="v"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="next" returnType="Node&lt;E&gt;" visibility="public"/>
+        <Method name="setNext" returnType="void" visibility="public">
+          <Argument type="Node&lt;E&gt;" name="next"/>
+        </Method>
+        <Method name="value" returnType="E" visibility="public"/>
+        <Method name="setValue" returnType="void" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SimplementeEncadenada" package="" visibility="public" isAbstract="true" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="count" type="int" visibility="protected"/>
+        <Field name="head" type="Node&lt;E&gt;" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="size" returnType="int" visibility="public"/>
+        <Method name="addFirst" returnType="void" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+        <Method name="removeFirst" returnType="E" visibility="public"/>
+        <Method name="getFirst" returnType="E" visibility="public"/>
+        <Method name="addLast" returnType="void" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+        <Method name="contains" returnType="boolean" visibility="public">
+          <Argument type="E" name="value"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Stack" package="" visibility="public" xPosition="1520.0" yPosition="420.0">
+      <Methods>
+        <Method name="push" returnType="void" visibility="public">
+          <Argument type="E" name="item"/>
+        </Method>
+        <Method name="pop" returnType="E" visibility="public"/>
+        <Method name="peek" returnType="E" visibility="public"/>
+        <Method name="empty" returnType="boolean" visibility="public"/>
+        <Method name="size" returnType="int" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="Vector" package="" visibility="public" xPosition="1820.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="ListaCircular" target="AbstractList"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="AbstractStack" target="Stack"/>
+    <IsRelation name="is" source="Lista" target="AbstractStack"/>
+    <IsRelation name="is" source="ArrayLista" target="AbstractStack"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="AbstractList" target="List"/>
+    <UseRelation source="Calculadora" target="Stack" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Node" target="Node" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pila" source="Calculadora" target="Stack" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Calculadora" target="Calculadora" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="DoblementeEncadenada" target="AbstractList"/>
+    <IsRelation name="is" source="SimplementeEncadenada" target="AbstractList"/>
+    <UseRelation source="AbstractFactory" target="Stack" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="singleton" source="Calculadora" target="Calculadora" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Vector" target="AbstractStack"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
